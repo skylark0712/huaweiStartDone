@@ -16,11 +16,8 @@ export class RDBStoreUtil {
    * 创建数据库
    */
   createObjectiveRDB(context: Context) {
-    const STORE_CONFIG: relationalStore.StoreConfig = {
-      name: 'Objective.db',
-      securityLevel: relationalStore.SecurityLevel.S1
-    }
-
+    const STORE_CONFIG: relationalStore.StoreConfig =
+      { name: 'Objective.db', securityLevel: relationalStore.SecurityLevel.S1 }
     relationalStore.getRdbStore(context, STORE_CONFIG, (err: BusinessError, rdbStore: relationalStore.RdbStore) => {
       this.objectiveRDB = rdbStore
       if (err) {

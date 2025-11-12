@@ -117,7 +117,7 @@ export class RDBStoreUtil {
   }
 
   /**
-   * 新增单个计划
+   * 新增（单个）
    */
   async insertPlan(sportID: number, duration: number, status: boolean) {
     const sportData: relationalStore.ValuesBucket =
@@ -132,7 +132,7 @@ export class RDBStoreUtil {
   }
 
   /**
-   * 更新计划
+   * 更新
    */
   async updatePlan(planID: number, duration: number, status: boolean) {
     const planData: relationalStore.ValuesBucket = {

@@ -198,12 +198,12 @@ export struct GoalPage {
       Button($r('app.string.submit'))
         .width('288vp')
         .onClick(async () => {
-          await RDBStoreUtil.insertPlan(this.addSportID, this.addDuration, this.addStatus);
+          await RDBStoreUtil.insertPlan(this.addSportID, this.addDuration, this.addStatus)
           await RDBStoreUtil.queryAllPlans().then((value) => {
-            this.plansSet = value;
-          });
-          this.refreshSelectOption();
-          this.isInsetShow = false;
+            this.plansSet = value
+          })
+          this.refreshSelectOption()
+          this.isInsetShow = false
         })
     }
     .justifyContent(FlexAlign.Center)
@@ -211,13 +211,13 @@ export struct GoalPage {
   }
 
   async aboutToAppear(): Promise<void> {
-    RDBStoreUtil.createSportTable();
-    RDBStoreUtil.initSportTable();
-    RDBStoreUtil.createPlanTable();
+    RDBStoreUtil.createSportTable()
+    RDBStoreUtil.initSportTable()
+    RDBStoreUtil.createPlanTable()
     await RDBStoreUtil.queryAllPlans().then((value) => {
-      this.plansSet = value;
-    });
-    this.refreshSelectOption();
+      this.plansSet = value
+    })
+    this.refreshSelectOption()
   }
 
   async refreshSelectOption() {
